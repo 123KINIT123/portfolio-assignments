@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker App</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f0f2f5; text-align:center; padding:2rem;}
+    #colorDisplay { width:150px; height:150px; margin:1rem auto; border-radius:10px; border:2px solid #ccc; }
+    input { padding:0.5rem; font-size:1rem; }
+  </style>
+</head>
+<body>
+
+<h1>Color Picker App</h1>
+<input type="color" id="colorInput" value="#ff0000">
+<p>HEX: <span id="hexValue">#ff0000</span></p>
+<div id="colorDisplay" style="background:#ff0000;"></div>
+
+<script>
+  const colorInput = document.getElementById('colorInput');
+  const hexValue = document.getElementById('hexValue');
+  const colorDisplay = document.getElementById('colorDisplay');
+
+  colorInput.addEventListener('input', function() {
+    colorDisplay.style.background = colorInput.value;
+    hexValue.textContent = colorInput.value;
+  });
+</script>
+
+</body>
+</html>
